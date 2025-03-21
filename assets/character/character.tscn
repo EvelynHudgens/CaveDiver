@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3pajtyjhxn03"]
+
+[ext_resource type="Script" path="res://assets/character/character_controller.gd" id="1_0hpdl"]
+[ext_resource type="Script" path="res://assets/character/camera_controller.gd" id="2_7602x"]
+[ext_resource type="PackedScene" uid="uid://cv4qd1e1l8n6m" path="res://assets/character/rigged_arms_edit.tscn" id="3_ewu5y"]
+[ext_resource type="Script" path="res://assets/character/character_data.gd" id="4_5mjcm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_imo42"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_48542"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+floor_constant_speed = true
+script = ExtResource("1_0hpdl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_imo42")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_48542")
+skeleton = NodePath("")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 1.34188, 0)
+current = true
+script = ExtResource("2_7602x")
+
+[node name="forward_node" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="backward_node" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="left_node" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="right_node" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Sketchfab_Scene" parent="Camera3D" instance=ExtResource("3_ewu5y")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.0539222, -0.135028)
+
+[node name="character_data" type="Node3D" parent="."]
+script = ExtResource("4_5mjcm")
+
+[connection signal="stamina_signal" from="character_data" to="." method="_on_character_data_stamina_signal"]

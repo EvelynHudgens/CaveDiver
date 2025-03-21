@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwtpnbl7ger0d"]
+
+[ext_resource type="PackedScene" uid="uid://cwkl2fayoyobh" path="res://assets/nodes/base_cave.tscn" id="1_qcbk8"]
+[ext_resource type="Script" path="res://scenes/game_scene/scripts/cave_manager.gd" id="2_pu6c3"]
+[ext_resource type="PackedScene" uid="uid://b3pajtyjhxn03" path="res://assets/character/character.tscn" id="3_ty4oa"]
+
+[sub_resource type="Environment" id="Environment_f2xqm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Caves" type="Node3D" parent="."]
+script = ExtResource("2_pu6c3")
+
+[node name="Base_Cave" parent="Caves" instance=ExtResource("1_qcbk8")]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_ty4oa")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.932354, 1.03947, -0.703655)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D"]
+light_energy = 0.354
+omni_range = 3.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f2xqm")

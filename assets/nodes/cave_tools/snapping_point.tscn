@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://qo41vcxihexa"]
+
+[node name="snapping_point" type="Node3D"]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+gizmo_extents = 1.02

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bd3k6j5k8nj4h"
+path="res://.godot/imported/stone_small_a_lod1.obj-e44e84e4b7956b72eb4e9e8ae94e999e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_small_a_lod1.obj-e44e84e4b7956b72eb4e9e8ae94e999e.mesh"]
+
+source_file="res://assets/models/rocks/stone_small_a/stone_small_a_lod1.obj"
+dest_files=["res://.godot/imported/stone_small_a_lod1.obj-e44e84e4b7956b72eb4e9e8ae94e999e.mesh", "res://.godot/imported/stone_small_a_lod1.obj-e44e84e4b7956b72eb4e9e8ae94e999e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,463 @@
+[gd_scene load_steps=17 format=3 uid="uid://cwkl2fayoyobh"]
+
+[ext_resource type="PackedScene" uid="uid://doa8krrgt8xfa" path="res://assets/models/rocks/stone_small_a/stone_small_a.tscn" id="1_hyhgv"]
+[ext_resource type="Script" path="res://assets/nodes/scripts/cave.gd" id="1_m2cd7"]
+[ext_resource type="PackedScene" uid="uid://d05knyxxhtsso" path="res://assets/models/rocks/stone_small_b/stone_small_b.tscn" id="2_r3urg"]
+[ext_resource type="PackedScene" uid="uid://dy134o4s71jmj" path="res://assets/models/rocks/stone_small_c/stone_small_c.tscn" id="3_251si"]
+[ext_resource type="Texture2D" uid="uid://c8agevg4u7jcq" path="res://assets/models/rocks/stone_small_a/stone_small_a_albedo.png" id="3_bpxmx"]
+[ext_resource type="Texture2D" uid="uid://6wcjev4sspsq" path="res://assets/models/rocks/stone_small_a/stone_small_a_normal.png" id="4_jhoqm"]
+[ext_resource type="PackedScene" uid="uid://qo41vcxihexa" path="res://assets/nodes/cave_tools/snapping_point.tscn" id="5_lq88u"]
+[ext_resource type="Texture2D" uid="uid://be2u7h81pdold" path="res://assets/models/rocks/stone_small_b/stone_small_b_albedo.png" id="6_gnq36"]
+[ext_resource type="Texture2D" uid="uid://r1bpqpl7sjbt" path="res://assets/models/rocks/stone_small_b/stone_small_b_normal.png" id="7_klqi4"]
+[ext_resource type="Texture2D" uid="uid://b4lo63q3xgrhe" path="res://assets/models/rocks/stone_small_c/stone_small_c_albedo.png" id="9_00tbw"]
+[ext_resource type="Texture2D" uid="uid://dr1i7uleas1vs" path="res://assets/models/rocks/stone_small_c/stone_small_c_normal.png" id="10_d7bri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qs33x"]
+albedo_texture = ExtResource("3_bpxmx")
+normal_enabled = true
+normal_texture = ExtResource("4_jhoqm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtpu2"]
+albedo_texture = ExtResource("6_gnq36")
+normal_enabled = true
+normal_texture = ExtResource("7_klqi4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6liy"]
+albedo_texture = ExtResource("9_00tbw")
+normal_enabled = true
+normal_texture = ExtResource("10_d7bri")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbq1m"]
+albedo_texture = ExtResource("3_bpxmx")
+normal_enabled = true
+normal_texture = ExtResource("4_jhoqm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_js2y3"]
+albedo_texture = ExtResource("6_gnq36")
+normal_enabled = true
+normal_texture = ExtResource("7_klqi4")
+
+[node name="Base_Cave" type="Node3D"]
+script = ExtResource("1_m2cd7")
+
+[node name="StoneSmallALod1" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.191324, 0, 0.152932)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qs33x")
+
+[node name="StoneSmallBLod1" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90556, 0.0223131, 0.520098)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod1" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27452, -0.104132, 0.0200977)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod2" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494689, -0.259532, -0.727068)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod2" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.930787, -0.244822, -1.04835)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod3" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72227, -0.127933, -1.59055)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod3" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29952, -0.164997, -0.412108)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod4" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65477, -0.0984887, -1.70968)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod4" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26545, -0.139215, -0.849813)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod5" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423028, 0, -0.0582094)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod5" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.980126, 0, 0.198376, 0, 1, 0, -0.198376, 0, -0.980126, -0.179425, -0.210381, -0.859605)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod6" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.612521, 0, 0.790454, 0, 1, 0, -0.790454, 0, 0.612521, 0.583091, -0.166602, -0.558209)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod2" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17322, -0.168693, -0.249549)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod6" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.688329, 0, 0.725398, 0, 1, 0, -0.725398, 0, 0.688329, 1.08166, -0.328014, -0.963476)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod7" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121134, -0.160513, -1.69662)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod3" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.670219, 0, 0.742163, 0, 1, 0, -0.742163, 0, 0.670219, -0.765211, -0.149969, -2.19662)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod8" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.614409, 0, -0.788988, 0, 1, 0, 0.788988, 0, 0.614409, 0.207726, -0.220317, -1.99158)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallBLod9" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.845877, 0, -0.533378, 0, 1, 0, 0.533378, 0, 0.845877, 0.839627, -0.385468, -2.0875)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod7" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99221, -0.330819, -2.09055)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallCLod4" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.370593, 0.0124873, -2.91914)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod8" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.770558, 0, 0.63737, 0, 1, 0, -0.63737, 0, 0.770558, 1.54884, 0.246699, -2.10652)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallALod9" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.705513, 0, 0.708697, 0, 1, 0, -0.708697, 0, -0.705513, -2.32188, -0.0151021, 0.707886)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod10" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.355188, 0, 0.934795, 0, 1, 0, -0.934795, 0, -0.355188, -3.6202, -0.238735, 0.395793)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod5" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.579992, 0, 0.814622, 0, 1, 0, -0.814622, 0, 0.579992, -3.00221, -0.162303, 1.41456)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallCLod6" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(-0.594121, 0, 0.804376, 0, 1, 0, -0.804376, 0, -0.594121, -1.50626, 0.0450244, 1.31414)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod10" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.203317, 0, 0.979113, 0, 1, 0, -0.979113, 0, 0.203317, -2.46991, -0.144445, 1.52901)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallCLod7" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.25833, 0, 0.966057, 0, 1, 0, -0.966057, 0, 0.25833, -0.047806, 0.130269, 1.03293)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod11" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.245104, 0, 0.969497, 0, 1, 0, -0.969497, 0, -0.245104, 0.668268, -0.155019, 0.449283)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallALod12" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19063, 0.194987, -3.66572)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod11" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.825646, 0, -0.564189, 0, 1, 0, 0.564189, 0, -0.825646, -2.59988, 0.108948, -2.59197)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod8" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.519325, 0, 0.854577, 0, 1, 0, -0.854577, 0, 0.519325, -3.62444, 0.232472, -1.65246)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod14" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.713287, 0, 0.700872, 0, 1, 0, -0.700872, 0, 0.713287, -3.66902, 0.0479527, 1.50222)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod12" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44809, 0.437953, 1.39644)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod9" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.882497, 0, 0.470319, 0.218071, 0.886009, -0.409185, -0.416707, 0.463667, 0.7819, -2.18533, 0.245555, 1.79083)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod13" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.615703, 0, 0.787979, 0.340462, 0.90184, -0.266027, -0.710631, 0.43207, 0.555265, -1.13592, 0.227525, 1.29256)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod15" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262689, 0.312769, 0.776396)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod14" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.370687, 0, -0.928758, 0, 1, 0, 0.928758, 0, -0.370687, 1.29318, 0.144302, -0.509171)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod16" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.251444, 0, -0.967872, 0, 1, 0, 0.967872, 0, -0.251444, 1.83188, 0.689294, -0.589006)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod15" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.67916, 0, 0.733991, 0, 1, 0, -0.733991, 0, 0.67916, 1.60476, 0.561067, -2.34881)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod10" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(-0.99858, 0, 0.0532772, 0, 1, 0, -0.0532772, 0, -0.99858, -0.0297775, 0.194987, -2.70139)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod17" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.925051, 0, 0.379844, 0.0528706, 0.990266, 0.128758, -0.376146, 0.13919, -0.916046, 0.392716, 0.599234, -2.96572)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod16" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.340117, 0, 0.940383, 0, 1, 0, -0.940383, 0, -0.340117, 0.878576, 0.358437, -1.81297)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallBLod17" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271927, 0.352487, -3.41789)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod11" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.686669, 0, 0.72697, 0, 1, 0, -0.72697, 0, 0.686669, 0.997275, 0.702769, 0.437066)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod18" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.790144, -2.6939e-08, 0.612921, -0.55819, 0.413057, -0.719589, -0.253171, -0.910705, -0.326374, -0.305626, 0.694808, 0.792248)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod12" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(1, 0, 0, 0, 0.149484, 0.988764, 0, -0.988764, 0.149484, -1.05819, 0.724047, 0.965363)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod18" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.996711, 0, -0.081034, 0.0711513, 0.478585, -0.875154, 0.0387816, -0.878041, -0.477011, -2.73076, 0.71892, 1.37191)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod19" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60011, 0.588699, 1.06829)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod19" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67179, 0.911199, 1.49637)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod20" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.657336, 0, 0.753598, 0, 1, 0, -0.753598, 0, 0.657336, -3.84041, 0.0558455, 1.0944)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod20" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.554286, 0.654701, 0.513939, -0.480087, 0.755888, -0.445141, -0.679915, 0, 0.733291, -3.53687, 0.674525, 1.46236)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallCLod13" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.04555, -0.740072, -0.670983, 0.998111, 0.0614318, 0, 0.0412197, -0.669716, 0.741472, -3.37535, 0.98444, -2.21534)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod22" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.999954, 0.00949792, 0.00161396, 0, -0.167526, 0.985868, 0.00963407, -0.985822, -0.167518, -2.61532, 0.601446, -3.01239)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod21" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 0.0246764, -0.999695, 0, 0.999695, 0.0246764, -0.771028, 1.27041, -3.21136)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallCLod14" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(-0.119242, -0.702318, 0.701805, 0.985891, -0.167388, 0, 0.117474, 0.691903, 0.712369, 0.220663, 1.5082, -2.58381)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod22" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.959087, -0.281703, -0.0282022, 0, 0.099615, -0.995026, 0.283112, 0.954317, 0.0955395, 1.20535, 1.5061, -1.86517)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod23" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.00327711, -0.813679, -0.581305, -0.00458706, 0.581314, -0.813667, 0.999984, -2.11668e-10, -0.00563742, 1.77484, 1.15432, -1.40436)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod15" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(-0.0512553, -0.998686, 0, 0.998686, -0.0512553, 0, 0, 0, 1, 1.99228, 1.65195, -1.04009)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod24" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.840481, -0.530507, 0.110239, 0, 0.203454, 0.979085, -0.54184, -0.822902, 0.170999, 1.19852, 1.02977, 0.290754)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod23" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0719598, 1.18715, 1.20758)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallALod24" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.317255, 0, -0.94834, 0, 1, 0, 0.94834, 0, 0.317255, -2.49409, 1.07266, -3.4677)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallALod25" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.941341, 0, 0.337457, 0, 1, 0, -0.337457, 0, 0.941341, -2.51416, 1.46266, -3.60115)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod25" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.936476, 0, -0.35073, 0, 1, 0, 0.35073, 0, 0.936476, -0.592602, 1.43882, -2.99627)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod27" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.773376, 1.36636e-08, 0.633948, 0.431882, 0.732044, -0.526868, -0.464078, 0.681258, 0.566145, -0.625911, 1.03215, -3.06193)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallALod28" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.82272, 0.563086, 0.0778843, 0, 0.137012, -0.990569, -0.568447, 0.814961, 0.112723, 1.29866, 1.87234, 0.218582)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod26" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 0.225342, 0.97428, 0, -0.97428, 0.225342, -0.34682, 1.57715, 0.838863)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallBLod21" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.110324, -0.239805, 0.964532, 0, 0.970456, 0.241278, -0.993896, -0.0266188, 0.107065, -3.95556, 0.540019, -1.6844)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallBLod27" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.172307, -0.937319, -0.30289, 0.672326, 0.336638, -0.659282, 0.719922, -0.0900419, 0.688189, -3.7687, 1.25606, -1.38611)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod13" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.978699, 0.205299, 0, -0.205299, -0.978699, 0, 0, 0, 1, -3.52095, 1.88111, -0.0266294)
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod28" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.977434, -0.211239, 0, 0.211239, 0.977434, 0, 0, 0, 1, 1.06532, 2.41974, -1.60198)
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod26" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.442625, 2.28852, -2.10198)
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallCLod16" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171207, 2.19886, -2.55073)
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod29" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.0187263, 0, 0.999825, 0, 1, 0, -0.999825, 0, 0.0187263, -1.42936, 1.92558, -2.83732)
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallALod29" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.789041, 0, -0.61434, 0, 1, 0, 0.61434, 0, 0.789041, -3.23827, 2.01008, -1.13362)
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod30" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.797247, 0, 0.603653, 0, 1, 0, -0.603653, 0, -0.797247, -2.94725, 2.10482, 0.154577)
+surface_material_override/0 = SubResource("StandardMaterial3D_js2y3")
+
+[node name="StoneSmallALod30" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(1, 0, 0, 0, 0.521456, -0.853278, 0, 0.853278, 0.521456, -3.47387, 1.37736, 1.19966)
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallCLod17" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.95273, 0.253082, 0.16809, 1.92822e-08, 0.553261, -0.833008, -0.303817, 0.793632, 0.527108, -1.7275, 1.69577, 0.724053)
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod31" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(-0.77188, 0, 0.635768, 0, 1, 0, -0.635768, 0, -0.77188, 0.56237, 2.68822, -0.795123)
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallCLod18" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.887333, 0.221262, 0.404578, 0, 0.877364, -0.479825, -0.461129, 0.425765, 0.778514, -0.0602531, 2.07468, 0.181615)
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod31" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(-0.94167, 0, 0.336536, 0, 1, 0, -0.336536, 0, -0.94167, -1.25943, 2.01701, -1.69699)
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod19" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(0.116446, -0.409079, -0.905039, 0.112679, 0.910796, -0.397183, 0.986784, -0.0557285, 0.152154, -0.724404, 2.52111, -0.81825)
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallALod32" parent="." instance=ExtResource("1_hyhgv")]
+transform = Transform3D(0.739901, 0, 0.672716, 0, 1, 0, -0.672716, 0, 0.739901, -1.47012, 2.25133, -0.271594)
+surface_material_override/0 = SubResource("StandardMaterial3D_fbq1m")
+
+[node name="StoneSmallBLod32" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.819354, -0.372133, 0.436092, 0.111794, 0.849797, 0.515118, -0.562282, -0.373312, 0.737887, -2.46722, 1.75335, -2.38481)
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod20" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98383, 2.24801, -1.54204)
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod33" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14884, 2.16213, -0.602235)
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="StoneSmallCLod21" parent="." instance=ExtResource("3_251si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32194, 2.2372, -0.138525)
+surface_material_override/0 = SubResource("StandardMaterial3D_b6liy")
+
+[node name="StoneSmallBLod34" parent="." instance=ExtResource("2_r3urg")]
+transform = Transform3D(0.779797, 0, 0.626032, 0, 1, 0, -0.626032, 0, 0.779797, -3.28553, 1.7103, -1.79152)
+surface_material_override/0 = SubResource("StandardMaterial3D_gtpu2")
+
+[node name="snapping_points" type="Node3D" parent="."]
+
+[node name="snapping_point" parent="snapping_points" instance=ExtResource("5_lq88u")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.8574, 0.0552266, -0.172834)
